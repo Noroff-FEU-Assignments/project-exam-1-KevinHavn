@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+		</style>
+		<link href="css/styles.css" rel="Stylesheet" />
+		<script src="javascript/index.mjs" type="module" defer></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Loading..</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="flex row justify-space-around padding-175">
+					<li><h1>Good Food Mood</h1></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="posts.html">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="flex column justify-center" id="post"></main>
+		<footer>
+			<div>
+				<ul class="flex row justify-space-around">
+					<li><a href="about.html">About Us</a></li>
+					<li><p>Created by Kevin Havn</p></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+			</div>
+		</footer>
+		<div id="imageModal" class="modal">
+			<span id="closeModal" class="close">&times;</span>
+			<img class="modal-content" id="modalImage" alt="modal image" />
+			<div id="caption"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+		</style>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="The home page of Good Food Mood, where you can browse for food healthy to both mind and body!" />
+		<title>Good Food Mood | Home</title>
+		<link href="css/styles.css" rel="Stylesheet" />
+		<script src="javascript/index.mjs" type="module" defer></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="flex row justify-space-around padding-175">
+					<li><h1>Good Food Mood</h1></li>
+					<li>Home</li>
+					<li><a href="posts.html">Posts</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="home grid justify-center">
+				<div id="carouselContainer" class="flex justify-center">
+					<button class="carouselPrev">Prev</button>
+					<div id="carousel" class="flex column">
+						<div id="carouselTrack" class="flex row"></div>
+					</div>
+					<button class="carouselNext">Next</button>
+				</div>
+				<div class="card more flex column justify-center maxwidth-50">
+					<h1 class="text-center">Interested in more?</h1>
+					<p class="text-center">
+						Want to see more of our healthy recipes?
+						<br />
+						<a href="posts.html">Click Here!</a>
+					</p>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div>
+				<ul class="flex row justify-space-around">
+					<li><a href="about.html">About Us</a></li>
+					<li><p>Created by Kevin Havn</p></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>
