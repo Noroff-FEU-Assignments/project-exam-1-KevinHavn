@@ -6,6 +6,8 @@ import { displaySinglePost } from "./render/singlepost.mjs";
 
 function initializePage() {
 	const path = window.location.pathname;
+	console.log(normalizedPath)
+	console.log(path)
 
 	if (path.endsWith("index.html") || path === "/") {
 		initializeCarousel();
