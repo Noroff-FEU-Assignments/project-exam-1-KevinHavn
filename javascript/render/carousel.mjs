@@ -20,7 +20,6 @@ export async function initializeCarousel() {
 					: "path/to/default/image.jpg",
 			};
 		});
-		console.log(postsWithMedia);
 		populateCarousel(postsWithMedia);
 	} catch (error) {
 		console.error("Error initializing carousel:", error);
@@ -43,14 +42,13 @@ function populateCarousel(posts) {
           <p>${post.excerpt.rendered}</p>
         `;
 
-        let readMoreBtn = document.createElement("button");
-        readMoreBtn.classList.add("readMoreButton")
-        readMoreBtn.textContent = "Read More";
-        readMoreBtn.onclick = () => {
-            window.location.href = `blog.html?postId=${post.id}`; 
-        };
-        card.appendChild(readMoreBtn);
-
+		let readMoreBtn = document.createElement("button");
+		readMoreBtn.classList.add("readMoreButton");
+		readMoreBtn.textContent = "Read More";
+		readMoreBtn.onclick = () => {
+			window.location.href = `blog.html?postId=${post.id}`;
+		};
+		card.appendChild(readMoreBtn);
 
 		carouselTrack.appendChild(card);
 	});
