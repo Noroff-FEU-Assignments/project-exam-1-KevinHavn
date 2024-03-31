@@ -6,32 +6,46 @@ import { displaySinglePost } from "./render/singlepost.mjs";
 
 function initializePage() {
 	const path = window.location.pathname;
-	console.log(normalizedPath)
-	console.log(path)
 
-	if (path.endsWith("index.html") || path === "/") {
+	// Define normalizedPath based on the current path
+	let normalizedPath = path;
+	if (!normalizedPath.endsWith(".html") && normalizedPath !== "/") {
+		normalizedPath = `${normalizedPath.replace(/\/$/, "")}.html`;
+	}
+
+	console.log("Current normalized path:", normalizedPath);
+
+	if (normalizedPath.endsWith("index.html") || normalizedPath === "/") {
+		console.log("Initializing index page");
 		initializeCarousel();
 		addCarouselEventListeners();
 	} else if (
-		path.endsWith("posts.html") ||
+		normalizedPath.endsWith("posts.html") ||
 		path.endsWith("/posts") ||
 		path === "/posts"
 	) {
+		console.log("Initializing posts page");
 		checkAndInitializePostsPage();
 	} else if (
-		path.endsWith("contact.html") ||
+		normalizedPath.endsWith("contact.html") ||
 		path.endsWith("/contact") ||
 		path === "/contact"
 	) {
+		console.log("Initializing contact page");
 	} else if (
-		path.endsWith("blog.html") ||
+		normalizedPath.endsWith("blog.html") ||
 		path.endsWith("/blog") ||
 		path === "/blog"
 	) {
+		console.log("Initializing blog page");
 		displaySinglePost();
 	} else {
 		console.log("No specific initialization for this page.");
 	}
 }
+
+document.addEventListener("DOMContentLoaded", initializePage);
+
+document.addEventListener("DOMContentLoaded", initializePage);
 
 document.addEventListener("DOMContentLoaded", initializePage);
