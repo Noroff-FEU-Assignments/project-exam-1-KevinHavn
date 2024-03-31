@@ -7,18 +7,25 @@ import { displaySinglePost } from "./render/singlepost.mjs";
 function initializePage() {
 	const path = window.location.pathname;
 
-	let normalizedPath = path;
-	if (!normalizedPath.endsWith(".html") && normalizedPath !== "/") {
-		normalizedPath = `${normalizedPath.replace(/\/$/, "")}.html`;
-	}
-
-	if (normalizedPath.endsWith("index.html") || normalizedPath === "/") {
+	if (path.endsWith("index.html") || path === "/") {
 		initializeCarousel();
 		addCarouselEventListeners();
-	} else if (normalizedPath.endsWith("posts.html")) {
+	} else if (
+		path.endsWith("posts.html") ||
+		path.endsWith("/posts") ||
+		path === "/posts"
+	) {
 		checkAndInitializePostsPage();
-	} else if (normalizedPath.endsWith("contact.html")) {
-	} else if (normalizedPath.endsWith("blog.html")) {
+	} else if (
+		path.endsWith("contact.html") ||
+		path.endsWith("/contact") ||
+		path === "/contact"
+	) {
+	} else if (
+		path.endsWith("blog.html") ||
+		path.endsWith("/blog") ||
+		path === "/blog"
+	) {
 		displaySinglePost();
 	} else {
 		console.log("No specific initialization for this page.");
