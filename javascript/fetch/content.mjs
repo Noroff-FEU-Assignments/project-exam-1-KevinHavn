@@ -13,6 +13,5 @@ export async function getContent(endpoint, params = {}) {
 	}
 
 	const content = await response.json();
-	console.log(content);
 	return content;
 }
