@@ -1,4 +1,3 @@
-import { getContent } from "./fetch/content.mjs";
 import { initializeCarousel } from "./render/carousel.mjs";
 import { addCarouselEventListeners } from "./listeners/carouselbuttons.mjs";
 import { checkAndInitializePostsPage } from "./render/posts.mjs";
