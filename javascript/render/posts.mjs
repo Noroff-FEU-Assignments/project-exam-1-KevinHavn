@@ -118,11 +118,13 @@ export async function createAndAppendPosts(posts) {
 }
 
 export async function initializePostsLoading() {
+	console.log("initializePostsLoading called");
 	try {
 		const posts = await getContent("posts", {
 			per_page: postsPerPage,
 			page: currentPage,
 		});
+		console.log("Posts fetched: ", posts);
 		createAndAppendPosts(posts);
 	} catch (error) {
 		console.error("Failed to initialize posts loading:", error);
@@ -131,7 +133,17 @@ export async function initializePostsLoading() {
 
 export function checkAndInitializePostsPage() {
 	const path = window.location.pathname;
-	if (path.endsWith("posts.html")) {
+	console.log("checkAndInitializePostsPage called, path: ", path);
+	if (
+		path.endsWith("posts.html") ||
+		path.endsWith("/posts") ||
+		path === "/posts"
+	) {
+		console.log("Initializing posts loading.");
 		initializePostsLoading();
+	} else {
+		console.log(
+			"checkAndInitializePostsPage: Path does not match posts.html or /posts."
+		);
 	}
 }
